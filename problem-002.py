@@ -8,11 +8,28 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 million, find the sum of the even-valued terms.
 """
 
-def test_sum_of_even_valued_fibonacci_numbers():
-    pass
 
-def get_fibonacci_sequence(max_sequence: int):
-    pass
+def test_get_even_fibonacci_sequence():
+    assert sum(get_even_fibonacci_sequence(10)) == 10
+    assert sum(get_even_fibonacci_sequence(20)) == 10
+    assert sum(get_even_fibonacci_sequence(30)) == 10
+    assert sum(get_even_fibonacci_sequence(40)) == 44
+
+
+def get_even_fibonacci_sequence(max_sequence: int = int(4 * (10 ** 6))) -> list:
+    sequence: list = []
+    a = 1
+    b = 1
+    c = a + b
+    while c < max_sequence:
+        if c % 2 == 0:
+            sequence.append(c)
+        a = b
+        b = c
+        c = a + b
+
+    return sequence
+
 
 def sum_of_even_valued_fibonacci_numbers() -> int:
     """Sum of even valued Fibonacci numbers.
@@ -22,4 +39,12 @@ def sum_of_even_valued_fibonacci_numbers() -> int:
     Returns:
         int: returned sum.
     """
-    pass
+    return sum(get_even_fibonacci_sequence())
+
+
+if __name__ == "__main__":
+    print(
+        "Sum of even valued Fibonacci numbers: {}".format(
+            sum_of_even_valued_fibonacci_numbers()
+        )
+    )
