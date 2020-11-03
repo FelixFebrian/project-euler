@@ -11,6 +11,9 @@ million, find the sum of the even-valued terms.
 def test_sum_of_even_valued_fibonacci_numbers():
     pass
 
+def get_fibonacci_sequence(max_sequence: int):
+    pass
+
 def sum_of_even_valued_fibonacci_numbers() -> int:
     """Sum of even valued Fibonacci numbers.
 
