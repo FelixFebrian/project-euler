@@ -25,7 +25,7 @@ def find_smallest_divisible_number(max_num: int) -> int:
     Returns:
         int: the smallest divisible number
     """
-    common_primes = dict()
+    common_primes: dict = dict()
     for num in range(max_num, 2, -1):
         primes = Counter(get_prime_factors(num))
         for (prime_number, times) in primes.items():
