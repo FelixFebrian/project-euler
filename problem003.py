@@ -16,6 +16,7 @@ def test_get_prime_factors():
     assert all([a == b for (a, b) in zip(get_prime_factors(8), [2, 2, 2])])
     assert all([a == b for (a, b) in zip(get_prime_factors(9), [3, 3])])
     assert all([a == b for (a, b) in zip(get_prime_factors(10), [2, 5])])
+    assert all([a == b for (a, b) in zip(get_prime_factors(100), [2, 2, 5, 5])])
 
 
 def get_prime_factors(num: int = 600851475143) -> list:
@@ -34,6 +35,9 @@ def get_prime_factors(num: int = 600851475143) -> list:
         while num % divider == 0:
             prime_factors.append(divider)
             num = num // divider
+
+    if num != 1:
+        prime_factors.append(num)
 
     return prime_factors
 

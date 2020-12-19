@@ -32,8 +32,8 @@ def is_palindrome(num: int) -> bool:
 
 
 def get_largest_palindrome(number_of_digits: int) -> int:
-    floor = 10 ** number_of_digits
-    ceil = 10 ** (number_of_digits + 1)
+    floor = 10 ** (number_of_digits - 1)
+    ceil = 10 ** number_of_digits
     largest_palindrome = -1
     for first_num in range(ceil, floor, -1):
         for second_num in range(ceil, floor, -1):
